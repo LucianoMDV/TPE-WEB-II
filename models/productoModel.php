@@ -7,7 +7,7 @@ class productoModel {
     }
 
     function getProductos() {
-        $sentencia = $this->db_coneccion->prepare("select * from producto"); // preparamos la seleccion de la tabla producto
+        $sentencia = $this->db_coneccion->prepare("SELECT * from producto"); // preparamos la seleccion de la tabla producto
         $sentencia->execute();                                               // ejecutamos lo anterior
         return $sentencia->fetchAll(PDO::FETCH_OBJ);                       // retornamos un arreglo associativo de la tabla producto
     }
