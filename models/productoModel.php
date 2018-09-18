@@ -9,13 +9,16 @@ class productoModel {
     function getProductos() {
         $sentencia = $this->db_coneccion->prepare("SELECT * from producto"); // preparamos la seleccion de la tabla producto
         $sentencia->execute();                                               // ejecutamos lo anterior
-        return $sentencia->fetchAll(PDO::FETCH_OBJ);                       // retornamos un arreglo associativo de la tabla producto
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);                         // retornamos un arreglo associativo de la tabla producto
     }
     function getProducto($id) {
-
+        $sentencia = $this->db_coneccion->prepare("SELECT * from producto WHERE id_producto = ?");
+        $sentencia->execute(array($id));
+        return $sentencia->fetch(PDO::FETCH_OBJ);
     }
-    function insertarProducto() {
-        //aca hay que usar pdo seguro para insertar productos
+    function insertarProducto($nombre,$precio,$descripcion,$id_categoria) {
+        $sentencia = $this->db_coneccion->prepare("INSERT INTO producto(nombre,precio,descripcion,id_categoria) VALUES(?,?,?,?)");
+        $sentencia->execute(array($nombre,$precio,$descripcion,$id_categoria));
     }
     function modificarProducto() {
 

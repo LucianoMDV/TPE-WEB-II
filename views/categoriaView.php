@@ -14,8 +14,7 @@ class categoriaView {
         $smarty->assign("categorias",$categorias);
         $smarty->assign("basehref", $this->basehref);
         // $smarty->assign("","");
-        $smarty->display("templates/verCategorias.tpl");
-        
+        $smarty->display("templates/verCategorias.tpl");   
     }
 }
 ?>
