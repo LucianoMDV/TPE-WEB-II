@@ -31,10 +31,15 @@ switch ($partesURL[ACTION]) {
             $controller->mostrarProductos();
         }
         break;
-    case 'guardarProducto':
+    case 'guardarActualizarProducto':
+
         $controller = new productoController();
-        $controller->insertarProducto();
+        $controller->guardarActualizarProducto();
         $controller->mostrarProductos();
+        break;
+    case 'borrarProducto':
+        $controller = new productoController();
+        $controller->eliminarProducto($partesURL[ID]);
         break;
 }
 

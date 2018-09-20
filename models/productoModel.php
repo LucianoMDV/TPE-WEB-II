@@ -23,8 +23,9 @@ class productoModel {
     function modificarProducto() {
 
     }
-    function eliminarProducto() {
-
+    function eliminarProducto($id_producto) {
+        $sentencia = $this->db_coneccion->prepare("DELETE from producto where id_producto = ?");
+        $sentencia->execute(array($id_producto));
     }
 }
 ?>

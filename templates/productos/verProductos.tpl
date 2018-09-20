@@ -9,18 +9,23 @@
             </tr>
         </thead>
         <tbody>
+            {* {foreach from=$categorias item=categoria}
+                <tr>    
+                    <td>{$categoria->nombre}</td>
+                </tr>
+            {/foreach} *}
             {foreach from=$productos item=producto} <!-- from="$productos" es un arreglo de la tabla producto -->
                 <tr>
                     <td><a href="producto/{$producto->id_producto}">{$producto->nombre}</a></td>            
                     <td>{$producto->precio}</td>
-                    {* <td><button type="submit">Editar</button><button type="submit">Borrar</button></td>                         *}
-                </tr>   
+                    <td><a class="btn btn-outline-warning" href="">Editar</a> <a class="btn btn-outline-danger" href="borrarProducto/{$producto->id_producto}">Borrar</a></td>                        
+                </tr>       
             {/foreach}
         </tbody>
     </table>
     
     <h1>SOLO ADMIN</h1>
-    <form class="cargaListaPrecios bg-danger p-3 w-100" method="POST" action="guardarProducto">
+    <form class="cargaListaPrecios bg-danger p-3 w-100" method="POST" action="guardarActualizarProducto">
             <div class="form-group row">
                 <label class="col-2 col-form-label">Nombre</label>
                 <div class="col-10">
@@ -48,7 +53,7 @@
             </div>
             <div>
                 <button class="btn btn-success" id="enviarCatalogo" type="submit">Enviar</button>
-                <button class="btn btn-success" id="actualizar" type="submit">Actualizar</button>
+                <button class="btn btn-success" id="actualizar" type="submit" >Actualizar</button>
             </div>
         </form>
     {* {$productos|@debug_print_var} para debugear*}
