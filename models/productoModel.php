@@ -20,8 +20,9 @@ class productoModel {
         $sentencia = $this->db_coneccion->prepare("INSERT INTO producto(nombre,precio,descripcion,id_categoria) VALUES(?,?,?,?)");
         $sentencia->execute(array($nombre,$precio,$descripcion,$id_categoria));
     }
-    function modificarProducto() {
-
+    function editarProducto($nombre,$precio,$descripcion,$id_categoria,$id_producto) {
+        $sentencia = $this->db_coneccion->prepare("UPDATE producto SET nombre=?, precio=?, descripcion=?, id_categoria=? WHERE id_producto=?");
+        $sentencia->execute(array($nombre,$precio,$descripcion,$id_categoria,$id_producto));
     }
     function eliminarProducto($id_producto) {
         $sentencia = $this->db_coneccion->prepare("DELETE from producto where id_producto = ?");

@@ -5,7 +5,7 @@
             <tr>
                 <th>NOMBRE</th>
                 <th>PRECIO</th>
-                {* <th>CAMBIOS-ADMIN</th> *}
+                <th>CAMBIOS-ADMIN</th>
             </tr>
         </thead>
         <tbody>
@@ -16,32 +16,35 @@
             {/foreach} *}
             {foreach from=$productos item=producto} <!-- from="$productos" es un arreglo de la tabla producto -->
                 <tr>
-                    <td><a href="producto/{$producto->id_producto}">{$producto->nombre}</a></td>            
+                    <td><a class='tablaNombre' href="producto/{$producto->id_producto}">{$producto->nombre}</a></td>            
                     <td>{$producto->precio}</td>
-                    <td><a class="btn btn-outline-warning" href="">Editar</a> <a class="btn btn-outline-danger" href="borrarProducto/{$producto->id_producto}">Borrar</a></td>                        
+                    <td>
+                        <a class="btn btn-outline-warning" id="modificar" href="crearEdit/{$producto->id_producto}">Editar</a> 
+                        <a class="btn btn-outline-danger" href="borrarProducto/{$producto->id_producto}">Borrar</a>
+                    </td>                        
                 </tr>       
             {/foreach}
         </tbody>
     </table>
     
     <h1>SOLO ADMIN</h1>
-    <form class="cargaListaPrecios bg-danger p-3 w-100" method="POST" action="guardarActualizarProducto">
+    <form class="cargaListaPrecios bg-danger p-3 w-100" method="POST" action="insertarProducto">
             <div class="form-group row">
                 <label class="col-2 col-form-label">Nombre</label>
                 <div class="col-10">
-                    <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_nombre" placeholder="ingrese un nombre" />
+                    <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_nombre" placeholder="Ingrese un nombre" />
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2 col-form-label">Precio:</label>
                 <div class="col-10">
-                    <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_precio" placeholder="ingrese un precio" />
+                    <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_precio" placeholder="Ingrese un precio" />
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2 col-form-label">Descripcion:</label>
                 <div class="col-10">
-                    <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_descripcion" placeholder="ingrese una descripcion" />
+                    <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_descripcion" placeholder="Ingrese una descripcion" />
                 </div>
             </div>
             <div>
@@ -52,9 +55,7 @@
                 </select>
             </div>
             <div>
-                <button class="btn btn-success" id="enviarCatalogo" type="submit">Enviar</button>
-                <button class="btn btn-success" id="actualizar" type="submit" >Actualizar</button>
+                <button class="btn btn-success" id="enviarCatalogo" type="submit">Insertar producto</button>   
             </div>
         </form>
-    {* {$productos|@debug_print_var} para debugear*}
 {include file="../footer.tpl"}

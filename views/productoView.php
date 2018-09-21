@@ -31,5 +31,14 @@ class productoView {
         $smarty->assign("basehref", $this->basehref);
         $smarty->display("templates/productos/verError.tpl");
     }
+
+    function crearEdit($id_producto, $categorias, $producto) {
+        $smarty = new Smarty();
+        $smarty->assign("basehref", $this->basehref);
+        $smarty->assign("id_producto", $id_producto);
+        $smarty->assign("producto", $producto);
+        $smarty->assign("categorias", $categorias);
+        $smarty->display("templates/productos/crearEdit.tpl");
+    }
 }
 ?>

@@ -22,7 +22,6 @@ class productoController extends Controller {
     }
 
     function mostrarProducto($id) {
-        // $modelProduc = new productoModel();
         $producto = $this->model->getProducto($id);
         if (!empty($producto)) {
             $this->view->mostrarProducto($producto);
@@ -32,33 +31,34 @@ class productoController extends Controller {
         }
     }
 
-    function guardarActualizarProducto() {
-        // $modelProduc = new productoModel();
-
-        // if (tiene id) {
-
-        // }
-
-        // if (noo tiene id) {
-            
-        if (isset($_POST['lista_tabla_nombre']) && isset($_POST['lista_tabla_precio']) && isset($_POST['lista_tabla_precio']) && isset($_POST['lista_tabla_descripcion']) && isset($_POST['buscar'])) {
-            $nombre = $_POST['lista_tabla_nombre'];
-            $precio = $_POST['lista_tabla_precio'];
-            $descripcion = $_POST['lista_tabla_descripcion'];
-            $id_categoria = $_POST['buscar'];
-            $this->model->insertarProducto($nombre,$precio,$descripcion,$id_categoria);
+    function insertarProducto($urlID) {
+            if (isset($_POST['lista_tabla_nombre']) && isset($_POST['lista_tabla_precio']) && isset($_POST['lista_tabla_precio']) && isset($_POST['lista_tabla_descripcion']) && isset($_POST['buscar'])) {
+                $nombre = $_POST['lista_tabla_nombre'];
+                $precio = $_POST['lista_tabla_precio'];
+                $descripcion = $_POST['lista_tabla_descripcion'];
+                $id_categoria = $_POST['buscar'];
+                $this->model->insertarProducto($nombre,$precio,$descripcion,$id_categoria);
+                header("Location: " . PRODUCTO);
+            }
         }
-        // }
-
-        header("Location: " . PRODUCTO); // no hace falta pero es para redireccionar cuando hago una accion.
-    }
 
     function eliminarProducto($id_producto) {
         $this->model->eliminarProducto($id_producto);
         header("Location: " . PRODUCTO);
     }
 
+    function crearEdit($id_producto) {
+        $categorias = $this->modelCateg->getCategorias();
+        $producto = $this->model->getProducto($id_producto);
+        $this->view->crearEdit($id_producto, $categorias, $producto);
+    }
+
     function editarProducto($id_producto) {
+        $nombre = $_POST['lista_tabla_nombre'];
+        $precio = $_POST['lista_tabla_precio'];
+        $descripcion = $_POST['lista_tabla_descripcion'];
+        $id_categoria = $_POST['buscar'];
+        $this->model->editarProducto($nombre,$precio,$descripcion,$id_categoria,$id_producto);
         header("Location: " . PRODUCTO);
     }
 }

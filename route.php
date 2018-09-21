@@ -1,6 +1,7 @@
 <?php
 require_once "controllers/productoController.php";
 require_once "controllers/categoriaController.php";
+require_once "views/inicioView.php";
 
 // constantes
 define('ACTION', 0); 
@@ -31,16 +32,31 @@ switch ($partesURL[ACTION]) {
             $controller->mostrarProductos();
         }
         break;
-    case 'guardarActualizarProducto':
-
+    case 'insertarProducto':
         $controller = new productoController();
-        $controller->guardarActualizarProducto();
+        $controller->insertarProducto($partesURL[ID]);
         $controller->mostrarProductos();
+        break;
+    case 'crearEdit':
+        $controller = new productoController();
+        $controller->crearEdit($partesURL[ID]);
+        break;
+    case 'editarProducto':
+        $controller = new productoController();
+        $controller->editarProducto($partesURL[ID]);
         break;
     case 'borrarProducto':
         $controller = new productoController();
         $controller->eliminarProducto($partesURL[ID]);
         break;
+    case 'inicio': 
+        $view = new inicioView();
+        $view->mostrarInicio();
+    break;
+    default:
+        $view = new inicioView();
+        $view->mostrarInicio();
+    break;
 }
 
 // $controller = new categoriaController();
