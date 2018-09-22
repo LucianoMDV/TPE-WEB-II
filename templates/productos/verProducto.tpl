@@ -1,7 +1,9 @@
 {include file="../header.tpl"}
-    <h1>{$producto->nombre}</h1>
+    <div class="col col-lg-4 bg-light border border-dark">
+        <h1>{$producto->nombre}</h1>
+        
+        <p>{$producto->descripcion}</p>
     
-    <p>Descripcion: {$producto->descripcion}</p>
-   
-    <a href="producto">Volver a la lista de productos</a>   
+        <a href="producto">Volver a la lista de productos</a>   
+    </div>
 {include file="../footer.tpl"}
