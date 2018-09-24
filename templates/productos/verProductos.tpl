@@ -10,6 +10,7 @@
                     <tr>
                         <th>NOMBRE</th>
                         <th>PRECIO</th>
+                        <th>CATEGORIA</th>
                         <th>CAMBIOS-ADMIN</th>
                     </tr>
                 </thead>
@@ -18,6 +19,13 @@
                         <tr>
                             <td><a class='tablaNombre' href="producto/{$producto->id_producto}">{$producto->nombre}</a></td>            
                             <td>{$producto->precio}</td>
+                            <td>{if $producto->id_categoria == 1}
+                                {foreach from=$categorias item=item}
+                                        {if $item->id_categoria == 1}
+                                            {$item->nombre}
+                                        {/if}
+                                {/foreach}
+                            {/if}</td>
                             <td>
                                 <a class="btn btn-outline-warning" id="modificar" href="crearEdit/{$producto->id_producto}">Editar</a> 
                                 <a class="btn btn-outline-danger" href="borrarProducto/{$producto->id_producto}">Borrar</a>
