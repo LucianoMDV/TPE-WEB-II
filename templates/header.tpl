@@ -25,7 +25,7 @@
                         <a class="btn btn-outline-success" href="categorias">Categorias</a>
                     </li>
                     <li class=" nav-item">
-                        <a class="btn btn-outline-success" href="producto">Producto</a>
+                        <a class="btn btn-outline-success" href="producto">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="btn btn-outline-success" href="login">Logearse</a>
@@ -34,5 +34,5 @@
             </div>
         </nav>
         <div class="container p-0">
-            <div class="row m-0 mt-3 pt-3">
+            <div class="row m-0 mt-4 pt-4">
     
