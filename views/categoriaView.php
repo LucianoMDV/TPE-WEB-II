@@ -17,9 +17,10 @@ class categoriaView {
         $smarty->display("templates/categorias/verCategorias.tpl");   
     }
 
-    function mostrarCategoria($categoria) {
+    function mostrarCategoria($categoria, $productosCateg) {
         $smarty = new Smarty();
         $smarty->assign("categoria",$categoria);
+        $smarty->assign("productosCateg",$productosCateg);
         $smarty->assign("basehref", $this->basehref);
         // $smarty->assign("","");
         $smarty->display("templates/categorias/verCategoria.tpl");   

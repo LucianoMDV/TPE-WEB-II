@@ -10,6 +10,7 @@
                     <tr>
                         <th>NOMBRE</th>
                         <th>PRECIO</th>
+                        <th>CATEGORIA</th>
                         <th>CAMBIOS-ADMIN</th>
                     </tr>
                 </thead>
@@ -36,20 +37,20 @@
                 {* <h5 class="card-title">Dark card title</h5> *}
                 <form class="cargaListaPrecios bg-danger p-3 w-100" method="POST" action="insertarProducto">
                     <div class="form-group row">
-                        <label class="col-2 col-form-label">Nombre</label>
-                        <div class="col-10">
+                        <label class="col-3 col-md-2 col-form-label">Nombre</label>
+                        <div class="col-9 col-md-10">
                             <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_nombre" placeholder="Ingrese un nombre" />
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-2 col-form-label">Precio:</label>
-                        <div class="col-10">
+                        <label class="col-3 col-md-2 col-form-label">Precio:</label>
+                        <div class="col-9 col-md-10">
                             <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_precio" placeholder="Ingrese un precio" />
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-2 col-form-label">Descripcion:</label>
-                        <div class="col-10">
+                        <label class="col-3 col-md-2 col-form-label">Descripcion:</label>
+                        <div class="col-9 col-md-10">
                             <input class="input ListaCatalogo form-control" type="text" name="lista_tabla_descripcion" placeholder="Ingrese una descripcion" />
                         </div>
                     </div>

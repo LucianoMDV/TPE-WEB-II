@@ -16,6 +16,13 @@ class productoModel {
         $sentencia->execute(array($id));
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
+
+    function getProductosCateg($id) {
+        $sentencia = $this->db_coneccion->prepare("SELECT producto.*, categoria.nombre as nombre_categoria from producto join categoria on producto.id_categoria=categoria.id_categoria WHERE producto.id_categoria=? ORDER BY producto.nombre");
+        $sentencia->execute(array($id));
+        return $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
+
     function insertarProducto($nombre,$precio,$descripcion,$id_categoria) {
         $sentencia = $this->db_coneccion->prepare("INSERT INTO producto(nombre,precio,descripcion,id_categoria) VALUES(?,?,?,?)");
         $sentencia->execute(array($nombre,$precio,$descripcion,$id_categoria));
