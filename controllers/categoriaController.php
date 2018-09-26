@@ -1,7 +1,7 @@
 <?php
-include_once "models/categoriaModel.php";
-include_once "views/categoriaView.php";
-include_once "controllers/controller.php";
+require_once "models/categoriaModel.php";
+require_once "views/categoriaView.php";
+require_once "controllers/controller.php";
 require_once "models/productoModel.php";
 
 class categoriaController extends Controller {

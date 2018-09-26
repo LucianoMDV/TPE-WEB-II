@@ -1,6 +1,6 @@
 <?php
-include_once "models/productoModel.php";
-include_once "libs/Smarty.class.php";
+require_once "models/productoModel.php";
+require_once "libs/Smarty.class.php";
 
 class productoView {
     private $basehref;

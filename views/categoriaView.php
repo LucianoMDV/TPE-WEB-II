@@ -1,6 +1,6 @@
 <?php
-include_once "models/categoriaModel.php";
-include_once "libs/Smarty.class.php";
+require_once "models/categoriaModel.php";
+require_once "libs/Smarty.class.php";
 
 class categoriaView {
     private $basehref;

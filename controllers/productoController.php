@@ -1,7 +1,7 @@
 <?php
-include_once "models/productoModel.php"; //lo incorporamos para poder hacer el option en verProductos.tpl
-include_once "views/productoView.php";
-include_once "controllers/controller.php";
+require_once "models/productoModel.php"; //lo incorporamos para poder hacer el option en verProductos.tpl
+require_once "views/productoView.php";
+require_once "controllers/controller.php";
 
 class productoController extends Controller {
 
