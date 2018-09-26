@@ -14,7 +14,15 @@ class categoriaView {
         $smarty->assign("categorias",$categorias);
         $smarty->assign("basehref", $this->basehref);
         // $smarty->assign("","");
-        $smarty->display("templates/verCategorias.tpl");   
+        $smarty->display("templates/categorias/verCategorias.tpl");   
+    }
+
+    function mostrarCategoria($categoria) {
+        $smarty = new Smarty();
+        $smarty->assign("categoria",$categoria);
+        $smarty->assign("basehref", $this->basehref);
+        // $smarty->assign("","");
+        $smarty->display("templates/categorias/verCategoria.tpl");   
     }
 }
 ?>

@@ -53,6 +53,15 @@ switch ($partesURL[ACTION]) {
         $view = new inicioView();
         $view->mostrarInicio();
     break;
+    case 'categorias':
+        $controller = new categoriaController();
+        if (isset($partesURL[ID])) {    
+            $controller->mostrarCategoria($partesURL[ID]);
+        }
+        else {
+            $controller->mostrarCategorias();
+        }
+    break;
     default:
         $view = new inicioView();
         $view->mostrarInicio();

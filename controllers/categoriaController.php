@@ -16,5 +16,10 @@ class categoriaController extends Controller {
         $categorias = $this->model->getCategorias();
         $this->view->mostrarCategorias($categorias); 
     }
+
+    function mostrarCategoria($id) {
+        $categoria = $this->model->getCategoria($id); //falta hacer este metodo en el model
+        $this->view->mostrarCategoria($categoria);
+    }
 }
 ?>
