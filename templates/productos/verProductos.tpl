@@ -18,6 +18,7 @@
                         <tr>
                             <td><a class='tablaNombre' href="producto/{$producto->id_producto}">{$producto->nombre}</a></td>            
                             <td>{$producto->precio}</td>
+                            <td>{$producto->nombre_categoria}</td>
                             <td>
                                 <a class="btn btn-outline-warning" id="modificar" href="crearEdit/{$producto->id_producto}">Editar</a> 
                                 <a class="btn btn-outline-danger" href="borrarProducto/{$producto->id_producto}">Borrar</a>
