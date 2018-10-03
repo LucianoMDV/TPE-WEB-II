@@ -14,14 +14,34 @@ class categoriaController extends Controller {
     }
 
     function mostrarCategorias() {
-        $categorias = $this->model->getCategorias();
-        $this->view->mostrarCategorias($categorias); 
+        if (isset($_SESSION["usuario"])) {
+            $categorias = $this->model->getCategorias();
+            $this->view->mostrarCategoriasAdm($categorias);
+        }
+        else {
+            $categorias = $this->model->getCategorias();
+            $this->view->mostrarCategorias($categorias);
+        }
+         
     }
 
     function mostrarCategoria($id) {
         $categoria = $this->model->getCategoria($id); //falta hacer este metodo en el model
         $productosCategoria = $this->modelProduc->getProductosCateg($id);
         $this->view->mostrarCategoria($categoria, $productosCategoria);
+    }
+
+    function insertarCategoria() {
+        if (isset($_POST['nombreCateg'])) {
+            $nombre = $_POST['nombreCateg'];
+            $this->model->insertarCategoria($nombre);
+            header("Location: " . CATEGORIA);
+        }
+    }
+
+    function eliminarCategoria($id) {
+        $this->model->eliminarCategoria($id);
+        header("Location: " . CATEGORIA);
     }
 }
 ?>

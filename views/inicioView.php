@@ -1,16 +1,10 @@
 <?php
-    class inicioView {
+require_once "views/view.php";
 
-        private $basehref;
-
-        function __construct() {
-            $this->basehref = '//'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/';
-        }
+    class inicioView extends View {
 
         function mostrarInicio() {
-            $smarty = new Smarty();
-            $smarty->assign("basehref", $this->basehref);
-            $smarty->display("templates/inicio.tpl");
+            $this->smarty->display("templates/inicio.tpl");
         }
     }
 ?>

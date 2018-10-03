@@ -1,44 +1,36 @@
 <?php
+require_once "views/view.php";
 require_once "models/productoModel.php";
 require_once "libs/Smarty.class.php";
 
-class productoView {
-    private $basehref;
-
-    function __construct() {
-        $this->basehref = '//'.$_SERVER['SERVER_NAME'].dirname($_SERVER['PHP_SELF']).'/';
-    }
+class productoView extends View {
 
     function mostrarProductos($productos, $categorias) {
-        $smarty = new Smarty();
-        $smarty->assign("productos",$productos);
-        $smarty->assign("categorias",$categorias);
-        $smarty->assign("basehref", $this->basehref);
-        // $smarty->assign("","");
-        $smarty->display("templates/productos/verProductos.tpl");
+        $this->smarty->assign("productos",$productos);
+        $this->smarty->assign("categorias",$categorias);
+        $this->smarty->display("templates/productos/verProductos.tpl");
+    }
+
+    function mostrarProductosAdm($productos, $categorias) {
+        $this->smarty->assign("productos",$productos);
+        $this->smarty->assign("categorias",$categorias);
+        $this->smarty->display("templates/productos/verProductosAdm.tpl");
     }
 
     function mostrarProducto($producto) {
-        $smarty = new Smarty();
-        $smarty->assign("producto",$producto);
-        $smarty->assign("basehref", $this->basehref);
-        // $smarty->assign("","");
-        $smarty->display("templates/productos/verProducto.tpl");
+        $this->smarty->assign("producto",$producto);
+        $this->smarty->display("templates/productos/verProducto.tpl");
     }
 
     function mostrarError() {
-        $smarty = new Smarty();
-        $smarty->assign("basehref", $this->basehref);
-        $smarty->display("templates/productos/verError.tpl");
+        $this->smarty->display("templates/productos/verError.tpl");
     }
 
     function crearEdit($id_producto, $categorias, $producto) {
-        $smarty = new Smarty();
-        $smarty->assign("basehref", $this->basehref);
-        $smarty->assign("id_producto", $id_producto);
-        $smarty->assign("producto", $producto);
-        $smarty->assign("categorias", $categorias);
-        $smarty->display("templates/productos/crearEdit.tpl");
+        $this->smarty->assign("id_producto", $id_producto);
+        $this->smarty->assign("producto", $producto);
+        $this->smarty->assign("categorias", $categorias);
+        $this->smarty->display("templates/productos/crearEdit.tpl");
     }
 }
 ?>

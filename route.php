@@ -1,6 +1,7 @@
 <?php
 require_once "controllers/productoController.php";
 require_once "controllers/categoriaController.php";
+require_once "controllers/loginController.php";
 require_once "views/inicioView.php";
 
 // constantes
@@ -31,24 +32,31 @@ switch ($partesURL[ACTION]) {
         else {
             $controller->mostrarProductos();
         }
-        break;
+    break;
     case 'insertarProducto':
         $controller = new productoController();
         $controller->insertarProducto($partesURL[ID]);
-        $controller->mostrarProductos();
-        break;
+    break;
+    case 'insertarCategoria':
+        $controller = new categoriaController();
+        $controller->insertarCategoria();
+    break;
     case 'crearEdit':
         $controller = new productoController();
         $controller->crearEdit($partesURL[ID]);
-        break;
+    break;
     case 'editarProducto':
         $controller = new productoController();
         $controller->editarProducto($partesURL[ID]);
-        break;
-    case 'borrarProducto':
+    break;
+    case 'eliminarProducto':
         $controller = new productoController();
         $controller->eliminarProducto($partesURL[ID]);
-        break;
+    break;
+    case 'eliminarCategoria':
+        $controller = new categoriaController();
+        $controller->eliminarCategoria($partesURL[ID]);
+    break;
     case 'inicio': 
         $view = new inicioView();
         $view->mostrarInicio();
@@ -61,6 +69,18 @@ switch ($partesURL[ACTION]) {
         else {
             $controller->mostrarCategorias();
         }
+    break;
+    case 'login':
+        $controller = new loginController();
+        $controller->mostrarLogin();
+    break;
+    case 'verificarLogin':
+        $controller = new loginController();
+        $controller->verificarLogin();
+    break;
+    case 'logout' :
+        $controller = new loginController();
+        $controller->cerrarSesion();
     break;
     default:
         $view = new inicioView();

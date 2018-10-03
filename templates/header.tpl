@@ -29,7 +29,11 @@
                 </ul>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="btn btn-outline-success logearse" href="login">Logearse</a>
+                        {if !empty($nombreUsuario)}
+                            <a class="btn btn-outline-warning logearse" href="logout">Cerrar sesion ({$nombreUsuario})</a>    
+                        {else} 
+                            <a class="btn btn-outline-success logearse" href="login">Logearse</a>
+                        {/if}
                     </li>
                 </ul>
             </div>

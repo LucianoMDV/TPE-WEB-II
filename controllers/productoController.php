@@ -18,7 +18,13 @@ class productoController extends Controller {
     function mostrarProductos() {
         $productos = $this->model->getProductos();
         $categorias = $this->modelCateg->getCategorias();
-        $this->view->mostrarProductos($productos, $categorias); 
+
+        if (isset($_SESSION["usuario"])) {
+            $this->view->mostrarProductosAdm($productos, $categorias);         
+        }
+        else {
+            $this->view->mostrarProductos($productos, $categorias); 
+        }
     }
 
     function mostrarProducto($id) {
@@ -48,9 +54,14 @@ class productoController extends Controller {
     }
 
     function crearEdit($id_producto) {
-        $categorias = $this->modelCateg->getCategorias();
-        $producto = $this->model->getProducto($id_producto);
-        $this->view->crearEdit($id_producto, $categorias, $producto);
+        if (isset($_SESSION["usuario"])) {
+            $categorias = $this->modelCateg->getCategorias();
+            $producto = $this->model->getProducto($id_producto);
+            $this->view->crearEdit($id_producto, $categorias, $producto);
+        }
+        else {
+            header("Location: " . HOME);
+        }
     }
 
     function editarProducto($id_producto) {

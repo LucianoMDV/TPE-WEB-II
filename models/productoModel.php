@@ -9,6 +9,7 @@ class productoModel {
     function getProductos() {
         $sentencia = $this->db_coneccion->prepare("SELECT producto.*, categoria.nombre as nombre_categoria from producto join categoria on producto.id_categoria=categoria.id_categoria ORDER BY categoria.nombre"); // preparamos la seleccion de la tabla producto
         $sentencia->execute();                                               // ejecutamos lo anterior
+    //    var_dump($sentencia->errorinfo());
         return $sentencia->fetchAll(PDO::FETCH_OBJ);                         // retornamos un arreglo associativo de la tabla producto
     }
     function getProducto($id) {
