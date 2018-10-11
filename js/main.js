@@ -1,7 +1,15 @@
 "use strict";
+const cambiante = document.querySelector(".cambiante");
 
-let inicio = document.querySelector(".inicio");
-inicio.addEventListener("click", function(e) {
-    // e.preventDefault();
-    inicio.classList.toggle("active");
+let categoria = document.querySelector(".categoria");
+categoria.addEventListener("click", function(e) {
+    e.preventDefault();
+    const url = this.getAttribute("href");
+    fetch(url)
+    .then(response => response.text())
+    .then(html => {
+        cambiante.innerHTML = html;
+        // alert("HOLA");
+    });
+    categoria.classList.add("active");
 });

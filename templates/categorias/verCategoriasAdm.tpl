@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{* {include file="header.tpl"} *}
         <div class="col">
             <ul class="list-group">
                 {foreach from=$categorias item=categoria}
@@ -30,4 +30,4 @@
             </div>
         </div>
     </div>
-{include file="footer.tpl"}
+{* {include file="footer.tpl"} *}
