@@ -1,10 +1,7 @@
 <?php
-class productoModel {
-    private $db_coneccion;
+    require_once "models/model.php";    
 
-    function __construct() {
-        $this->db_coneccion = new PDO('mysql:host=localhost;'.'dbname=db_dulcinea;charset=utf8', 'root', ''); //nos conectamos a la base de datos db_dulcinea
-    }
+class productoModel extends Model{
 
     function getProductos() {
         $sentencia = $this->db_coneccion->prepare("SELECT producto.*, categoria.nombre as nombre_categoria from producto join categoria on producto.id_categoria=categoria.id_categoria ORDER BY categoria.nombre"); // preparamos la seleccion de la tabla producto

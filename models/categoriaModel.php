@@ -1,10 +1,7 @@
 <?php
-    class categoriaModel {
-        private $db_coneccion;
+    require_once "models/model.php";
 
-        function __construct() {
-            $this->db_coneccion = new PDO('mysql:host=localhost;'.'dbname=db_dulcinea;charset=utf8', 'root', ''); //nos conectamos a la base de datos db_dulcinea
-        }
+    class categoriaModel extends Model{
 
         function getCategorias() {
             $sentencia = $this->db_coneccion->prepare("SELECT * from categoria");
