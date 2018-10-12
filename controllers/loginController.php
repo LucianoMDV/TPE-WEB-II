@@ -12,7 +12,9 @@ class loginController extends Controller {
     }
 
     function mostrarLogin() {
-        $this->view->mostrarLogin();   
+        if(isset($_GET["partial"]))
+                $partial = true;
+        $this->view->mostrarLogin("",$partial);   
     }
     function verificarLogin() {
         $usuario = $_POST["usuario"];

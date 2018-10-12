@@ -1,4 +1,6 @@
-{include file="../header.tpl"}
+{if !$partial}
+    {include file="../header.tpl"} 
+{/if}
     <div class="col">
         <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
             <div class="card-header">Ingrese los nuevos datos del producto</div>
@@ -34,4 +36,6 @@
             </form>
         </div>
     </div>
-{include file="../footer.tpl"}
+{if !$partial}
+    {include file="../footer.tpl"}
+{/if}

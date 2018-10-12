@@ -5,15 +5,17 @@ require_once "libs/Smarty.class.php";
 
 class productoView extends View {
 
-    function mostrarProductos($productos, $categorias) {
+    function mostrarProductos($productos, $categorias, $partial) {
         $this->smarty->assign("productos",$productos);
         $this->smarty->assign("categorias",$categorias);
+        $this->smarty->assign("partial",$partial);
         $this->smarty->display("templates/productos/verProductos.tpl");
     }
 
-    function mostrarProductosAdm($productos, $categorias) {
+    function mostrarProductosAdm($productos, $categorias, $partial) {
         $this->smarty->assign("productos",$productos);
         $this->smarty->assign("categorias",$categorias);
+        $this->smarty->assign("partial",$partial);
         $this->smarty->display("templates/productos/verProductosAdm.tpl");
     }
 

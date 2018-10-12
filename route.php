@@ -1,5 +1,6 @@
 <?php
 require_once "controllers/productoController.php";
+require_once "controllers/inicioController.php";
 require_once "controllers/categoriaController.php";
 require_once "controllers/loginController.php";
 require_once "views/inicioView.php";
@@ -16,7 +17,7 @@ if (!isset($_GET['action']))
 $action = $_GET['action'];
 $partesURL = explode("/", $action);
 
-// var_dump($_POST);
+// var_dump($_GET["partial"]);
 // var_dump($_POST["lista_tabla_nombre"]);
 // var_dump($_POST["lista_tabla_cantidad"]);
 // var_dump($_POST["lista_tabla_precio"]);
@@ -57,9 +58,9 @@ switch ($partesURL[ACTION]) {
         $controller = new categoriaController();
         $controller->eliminarCategoria($partesURL[ID]);
     break;
-    case 'inicio': 
-        $view = new inicioView();
-        $view->mostrarInicio();
+    case 'inicio':
+        $controller = new inicioController();
+        $controller->mostrarInicio();
     break;
     case 'categorias':
         $controller = new categoriaController();
@@ -83,8 +84,8 @@ switch ($partesURL[ACTION]) {
         $controller->cerrarSesion();
     break;
     default:
-        $view = new inicioView();
-        $view->mostrarInicio();
+        $controller = new inicioController();
+        $controller->mostrarInicio();
     break;
 }
 

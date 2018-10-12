@@ -1,4 +1,6 @@
-{include file="header.tpl"}
+{if !$partial}
+    {include file="header.tpl"}
+{/if}
     </div>
 
     <div class="row">
@@ -17,4 +19,6 @@
     
     <div class="row mt-2">
         <a href="categorias" class="col btn btn-primary">Volver atras</a>
-{include file="footer.tpl"}
+{if !$partial}
+    {include file="footer.tpl"}
+{/if}

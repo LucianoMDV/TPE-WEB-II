@@ -14,13 +14,16 @@ class categoriaController extends Controller {
     }
 
     function mostrarCategorias() {
+        if(isset($_GET["partial"])) {
+            $partial = true;
+        }
         if (isset($_SESSION["usuario"])) {
             $categorias = $this->model->getCategorias();
-            $this->view->mostrarCategoriasAdm($categorias);
+            $this->view->mostrarCategoriasAdm($categorias, $partial);
         }
         else {
             $categorias = $this->model->getCategorias();
-            $this->view->mostrarCategorias($categorias);
+            $this->view->mostrarCategorias($categorias, $partial);
         }
          
     }

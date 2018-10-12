@@ -1,16 +1,18 @@
-{include file="../header.tpl"}
+{if !$partial}
+    {include file="../header.tpl"}
+{/if}
     <div class="col">
         <div class="card bg-light mb-3" style="max-width: 100rem;">
             <div class="card-header">Tabla productos</div>
             {* <div class="card-body"> *}
                 {* <h5 class="card-title">Tabla productos</h5> *}
-                <table class="table table-dark table-bordered mb-0">
+                <table class="table table-sm table-dark table-bordered text-center mb-0">
                 <thead>
                     <tr>
                         <th>NOMBRE</th>
                         <th>PRECIO</th>
                         <th>CATEGORIA</th>
-                        <th>CAMBIOS-ADMIN</th>
+                        <th><i class="fas fa-edit"></i>/<i class="fa fa-trash"></i></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,8 +22,8 @@
                             <td>{$producto->precio}</td>
                             <td>{$producto->nombre_categoria}</td>
                             <td>
-                                <a class="btn btn-outline-warning" id="modificar" href="crearEdit/{$producto->id_producto}">Editar</a> 
-                                <a class="btn btn-outline-danger" href="eliminarProducto/{$producto->id_producto}">Borrar</a>
+                                <a class="btn btn-outline-warning" id="modificar" href="crearEdit/{$producto->id_producto}"><i class="fas fa-edit"></i></a> 
+                                <a class="btn btn-outline-danger" href="eliminarProducto/{$producto->id_producto}"><i class="fa fa-trash"></i></a>
                             </td>                        
                         </tr>       
                     {/foreach}
@@ -68,4 +70,6 @@
             {* </div> *}
         </div>
     </div>
-{include file="../footer.tpl"}
+{if !$partial}
+    {include file="../footer.tpl"}
+{/if}

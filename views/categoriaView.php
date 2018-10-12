@@ -5,13 +5,15 @@ require_once "libs/Smarty.class.php";
 
 class categoriaView extends View {
 
-    function mostrarCategorias($categorias) {
+    function mostrarCategorias($categorias, $partial) {
         $this->smarty->assign("categorias",$categorias);
+        $this->smarty->assign("partial", $partial);
         $this->smarty->display("templates/categorias/verCategorias.tpl");   
     }
 
-    function mostrarCategoriasAdm($categorias) {
+    function mostrarCategoriasAdm($categorias,$partial) {
         $this->smarty->assign("categorias",$categorias);
+        $this->smarty->assign("partial", $partial);
         $this->smarty->display("templates/categorias/verCategoriasAdm.tpl");   
     }
 

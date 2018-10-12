@@ -1,4 +1,6 @@
-{include file="header.tpl"}
+{if !$partial}
+    {include file="header.tpl"}
+{/if}
     <form class="bg-white p-2" action="verificarLogin" method="POST">
         <div class="form-group">
             <label for="exampleInputEmail1">Usuario</label>
@@ -13,4 +15,6 @@
               <div class="alert alert-danger mt-2" role="alert">{$error}</div>
         {/if}
     </form>
-{include file="footer.tpl"}
+{if !$partial}
+    {include file="footer.tpl"}
+{/if}

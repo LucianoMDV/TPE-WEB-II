@@ -1,4 +1,6 @@
-{* {include file="header.tpl"} *}
+{if !$partial}
+    {include file="header.tpl"}
+{/if}
         <div class="col">
             <ul class="list-group">
                 {foreach from=$categorias item=categoria}
@@ -30,4 +32,6 @@
             </div>
         </div>
     </div>
-{* {include file="footer.tpl"} *}
+{if !$partial}
+    {include file="footer.tpl"}
+{/if}
