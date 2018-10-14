@@ -2,14 +2,14 @@
         <div class="col">
             <ul class="list-group">
                 {foreach from=$categorias item=categoria}
-                        <div class="row mb-2">
-                        <div class="col-10">
+                    <div class="row mb-2">
+                        <div class="col-11">
                             <a href="categorias/{$categoria->id_categoria}">
                                 <li class="list-group-item">{$categoria->nombre}</li>
                             </a>
                         </div>
-                        <div class="col-2">
-                            <a class="btn btn-danger" href="eliminarCategoria/{$categoria->id_categoria}">Borrar</a>
+                        <div class="col-1 pl-1">
+                            <a class="btn btn-danger" href="eliminarCategoria/{$categoria->id_categoria}"><i class="fa fa-trash"></i></a>
                         </div>
                     </div> 
                 {/foreach}
