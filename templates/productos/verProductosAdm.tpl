@@ -20,8 +20,8 @@
                             <td>{$producto->precio}</td>
                             <td>{$producto->nombre_categoria}</td>
                             <td>
-                                <a class="btn btn-outline-warning" id="modificar" href="crearEdit/{$producto->id_producto}">Editar</a> 
-                                <a class="btn btn-outline-danger" href="eliminarProducto/{$producto->id_producto}">Borrar</a>
+                                <a class="btn btn-outline-warning" id="modificar" href="crearEdit/{$producto->id_producto}"><i class="fas fa-edit"></i></a> 
+                                <a class="btn btn-outline-danger" href="eliminarProducto/{$producto->id_producto}"><i class="fa fa-trash"></i></a>
                             </td>                        
                         </tr>       
                     {/foreach}

@@ -4,7 +4,7 @@
             <div class="card-header">Tabla productos</div>
             {* <div class="card-body"> *}
                 {* <h5 class="card-title">Tabla productos</h5> *}
-                <table class="table table-dark table-bordered mb-0">
+                <table class="table table-sm table-dark table-bordered text-center mb-0">
                 <thead>
                     <tr>
                         <th>NOMBRE</th>
