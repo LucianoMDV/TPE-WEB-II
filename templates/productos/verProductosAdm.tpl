@@ -1,10 +1,8 @@
 {include file="../header.tpl"}
-    <div class="col">
-        <div class="d-flex flex-wrap">
             <div class="col">
-                <div class="card bg-light mb-3" style="max-width: 100rem;">
+                <div class="card bg-light mb-3">
                     <div class="card-header">Tabla productos</div>
-                    <table class="table table-sm table-dark table-bordered text-center table-hover mb-0">
+                    <table class="table table-sm table-dark table-borderedless text-center table-hover mb-0">
                         <thead>
                             <tr>
                                 <th>NOMBRE</th>
@@ -68,6 +66,4 @@
                     {* </div> *}
                 </div>
             </div>
-        </div>
-    </div>
 {include file="../footer.tpl"}
