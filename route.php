@@ -87,7 +87,3 @@ switch ($partesURL[ACTION]) {
         $view->mostrarInicio();
     break;
 }
-
-// $controller = new categoriaController();
-// $controller->mostrarCategorias();
-?>

@@ -7,4 +7,3 @@ require_once "views/view.php";
             $this->smarty->display("templates/inicio.tpl");
         }
     }
-?>
