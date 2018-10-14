@@ -2,16 +2,20 @@
         <div class="col">
             <ul class="list-group">
                 {foreach from=$categorias item=categoria}
-                    <div>
-                        <a href="categorias/{$categoria->id_categoria}">
-                            <li class="list-group-item">{$categoria->nombre}</li>
-                        </a>
-                        <a class="btn btn-outline-danger" href="eliminarCategoria/{$categoria->id_categoria}">Borrar</a>
-                    </div>
+                        <div class="row mb-2">
+                        <div class="col-10">
+                            <a href="categorias/{$categoria->id_categoria}">
+                                <li class="list-group-item">{$categoria->nombre}</li>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a class="btn btn-danger" href="eliminarCategoria/{$categoria->id_categoria}">Borrar</a>
+                        </div>
+                    </div> 
                 {/foreach}
             </ul>
-        </div>
-    </div>
+        </div> {*Cierra el col*}
+    </div> {*Cierra el row del header.tpl*}
     
     <div class="row">
         <div class="col">
