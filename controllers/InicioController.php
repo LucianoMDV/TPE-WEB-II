@@ -9,7 +9,7 @@ class inicioController extends Controller {
     }
 
     function mostrarInicio() {
-        var_dump($_GET["partial"]);
+        // var_dump($_GET["partial"]);
         if(isset($_GET["partial"])) {
             $partial = true;
         }

@@ -19,14 +19,14 @@ class productoController extends Controller {
         $productos = $this->model->getProductos();
         $categorias = $this->modelCateg->getCategorias();
         
+        if(isset($_GET["partial"]))
+        $partial = true;
         if (isset($_SESSION["usuario"])) {
-            if(isset($_GET["partial"]))
-                $partial = true;
+            // if(isset($_GET["partial"]))
+            //     $partial = true;
             $this->view->mostrarProductosAdm($productos, $categorias, $partial);         
         }
         else {
-            if(isset($_GET["partial"]))
-                $partial = true;
             $this->view->mostrarProductos($productos, $categorias, $partial); 
         }
     }
