@@ -2,7 +2,7 @@
         <div class="col">
             <ul class="list-group">
                 {foreach from=$categorias item=categoria}
-                        <div class="row mb-2">
+                    <div class="row mb-2">
                         <div class="col-10">
                             <a href="categorias/{$categoria->id_categoria}">
                                 <li class="list-group-item">{$categoria->nombre}</li>
