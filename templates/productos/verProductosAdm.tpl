@@ -2,7 +2,7 @@
             <div class="col">
                 <div class="card bg-light mb-3">
                     <div class="card-header">Tabla productos</div>
-                    <table class="table table-sm table-dark table-borderedless text-center table-hover mb-0">
+                    <table class="table table-sm table-dark table-borderedless  text-center table-hover mb-0">
                         <thead>
                             <tr>
                                 <th>NOMBRE</th>

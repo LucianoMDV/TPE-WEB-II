@@ -9,3 +9,9 @@ body {
     -moz-background-size: cover;
     background-size: cover;
 }
+
+.carouselInicio {
+    height: 80vh;
+    width: 100%;
+
+}
